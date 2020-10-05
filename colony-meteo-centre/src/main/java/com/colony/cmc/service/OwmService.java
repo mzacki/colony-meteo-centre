@@ -1,6 +1,8 @@
 package com.colony.cmc.service;
 
 import com.colony.cmc.rest.owm.OwmFeignClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class OwmService {
@@ -12,7 +14,7 @@ public class OwmService {
         this.client = client;
     }
 
-    public Optional<Conditions> getConditions(Double latitude, Double longitude, String key, String units) {
+   /* public Optional<Conditions> getConditions(Double latitude, Double longitude, String key, String units) {
         return client.getConditions();
-    }
+    }*/
 }
