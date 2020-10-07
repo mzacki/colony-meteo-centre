@@ -1,7 +1,7 @@
 package com.colony.cmc.rest.owm;
 
 
-import com.colony.cmc.dto.Weather;
+import com.colony.cmc.dto.OwmResponse;
 import feign.codec.DecodeException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ public class OwmHystrixFallback implements OwmFeignClient {
     }
 
     @Override
-    public Weather getConditions(Double latitude, Double longitude, String key, String units) {
+    public OwmResponse getConditions(Double latitude, Double longitude, String key, String units) {
         LOG.error("FeignException - Getting weather conditions from OWM failed");
         if (cause instanceof DecodeException) {
             LOG.error("DecodeException - Getting weather conditions from OWM failed");

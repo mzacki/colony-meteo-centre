@@ -1,7 +1,9 @@
 package com.colony.cmc.service;
 
-import com.colony.cmc.dto.Weather;
+import com.colony.cmc.dto.OwmResponse;
 import com.colony.cmc.rest.owm.OwmFeignClient;
+import com.colony.cmc.security.ApiKeyStoreProperties;
+import com.colony.cmc.utils.QueryParams;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,18 +11,19 @@ import org.springframework.stereotype.Service;
 public class OwmService {
 
     private final OwmFeignClient client;
-    private static final Double LAT = 50.09;
-    private static final Double LON = 14.42;
-    private static final String KEY = "";
-    private static final String METRIC ="metric";
+    private final ApiKeyStoreProperties apiKeyStore;
+    private final QueryParams params;
+
 
 
     @Autowired
-    public OwmService(OwmFeignClient client) {
+    public OwmService(OwmFeignClient client, ApiKeyStoreProperties apiKeyStore, QueryParams params) {
         this.client = client;
+        this.apiKeyStore = apiKeyStore;
+        this.params = params;
     }
 
-    public Weather getConditions() {
-        return client.getConditions(LAT, LON, KEY, METRIC);
+    public OwmResponse getConditions() {
+        return client.getConditions(params.getLatitude(), params.getLongitude(), apiKeyStore.getOwm().getKey(), params.getMetric());
     }
 }

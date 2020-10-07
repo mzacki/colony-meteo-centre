@@ -6,6 +6,8 @@ logs/
 .cuvet/
 .idea/
 
+**/topsecret/
+
 # Compiled class file
 *.classf
 

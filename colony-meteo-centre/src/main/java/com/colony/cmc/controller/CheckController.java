@@ -1,6 +1,6 @@
 package com.colony.cmc.controller;
 
-import com.colony.cmc.dto.Weather;
+import com.colony.cmc.dto.OwmResponse;
 import com.colony.cmc.service.OwmService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +20,7 @@ public class CheckController {
     }
 
     @GetMapping("/owm")
-    public Weather getOWMconditions() {
+    public OwmResponse getOWMconditions() {
         return service.getConditions();
     }
 }

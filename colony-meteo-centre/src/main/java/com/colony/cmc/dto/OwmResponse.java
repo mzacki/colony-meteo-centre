@@ -2,7 +2,7 @@ package com.colony.cmc.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Weather {
+public class OwmResponse {
 
 
     @JsonProperty("name")
