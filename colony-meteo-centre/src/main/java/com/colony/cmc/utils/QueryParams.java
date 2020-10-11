@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class QueryParams {
 
-    private static final Double LAT = 50.09;
-    private static final Double LON = 14.42;
+    private static final Double LAT = 49.7497638;
+    private static final Double LON = 18.6354709;
     private static final String METRIC ="metric";
 
 

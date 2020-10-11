@@ -9,7 +9,21 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource(value = "/topsecret/store.yaml", factory = ApiKeyStoreFactory.class)
 public class ApiKeyStoreProperties {
 
+    private Acw acw;
     private Owm owm;
+
+    public static class Acw {
+
+        private String key;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+    }
 
     public static class Owm {
 
@@ -22,6 +36,14 @@ public class ApiKeyStoreProperties {
         public void setKey(String key) {
             this.key = key;
         }
+    }
+
+    public Acw getAcw() {
+        return acw;
+    }
+
+    public void setAcw(Acw acw) {
+        this.acw = acw;
     }
 
     public Owm getOwm() {
