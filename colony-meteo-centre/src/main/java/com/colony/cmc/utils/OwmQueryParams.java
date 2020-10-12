@@ -3,7 +3,7 @@ package com.colony.cmc.utils;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QueryParams {
+public class OwmQueryParams {
 
     private static final Double LAT = 49.7497638;
     private static final Double LON = 18.6354709;
