@@ -11,6 +11,7 @@ public class ApiKeyStoreProperties {
 
     private Acw acw;
     private Owm owm;
+    private Wts wts;
 
     public static class Acw {
 
@@ -26,6 +27,20 @@ public class ApiKeyStoreProperties {
     }
 
     public static class Owm {
+
+        private String key;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+    }
+
+    public static class Wts {
 
         private String key;
 
@@ -52,5 +67,13 @@ public class ApiKeyStoreProperties {
 
     public void setOwm(Owm owm) {
         this.owm = owm;
+    }
+
+    public Wts getWts() {
+        return wts;
+    }
+
+    public void setWts(Wts wts) {
+        this.wts = wts;
     }
 }

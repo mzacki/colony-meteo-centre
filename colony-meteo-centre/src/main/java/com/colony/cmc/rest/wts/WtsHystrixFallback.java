@@ -1,7 +1,7 @@
 package com.colony.cmc.rest.wts;
 
 
-import com.colony.cmc.dto.OwmResponse;
+import com.colony.cmc.dto.WtsResponse;
 import feign.codec.DecodeException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,12 +16,12 @@ public class WtsHystrixFallback implements WtsFeignClient {
     }
 
     @Override
-    public OwmResponse getConditions(Double latitude, Double longitude, String key, String units) {
-        LOG.error("FeignException - Getting weather conditions from OWM failed");
+    public WtsResponse getConditions(String key, String query) {
+        LOG.error("FeignException - Getting weather conditions from WeatherStack failed");
         if (cause instanceof DecodeException) {
-            LOG.error("DecodeException - Getting weather conditions from OWM failed");
+            LOG.error("DecodeException - Getting weather conditions from WeatherStack failed");
         } else if (cause instanceof RuntimeException) {
-            LOG.error("RuntimeException - Getting weather conditions from OWM failed");
+            LOG.error("RuntimeException - Getting weather conditions from WeatherStack failed");
         }
         return null;
     }
