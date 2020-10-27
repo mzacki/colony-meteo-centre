@@ -6,3 +6,5 @@ owm:
   url: https://api.openweathermap.org/data/2.5/weather
 wts:
   url: http://api.weatherstack.com/
+yahoo:
+  url: https://weather-ydn-yql.media.yahoo.com/forecastrss

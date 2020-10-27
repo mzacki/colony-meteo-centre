@@ -6,7 +6,8 @@ public enum Provider {
     ICM_METEO(2L),
     OPEN_WEATHER_MAP(3L),
     RASPBERRY_PI(0L),
-    WEATHERSTACK(4L);
+    WEATHERSTACK(4L),
+    YAHOO(5L);
 
     private long id;
 
