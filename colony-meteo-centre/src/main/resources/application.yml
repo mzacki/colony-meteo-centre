@@ -1,5 +1,7 @@
 acw:
   url: http://dataservice.accuweather.com/currentconditions/v1/
+icm:
+  url: https://api.meteo.pl/api/v1/
 owm:
   url: https://api.openweathermap.org/data/2.5/weather
 wts:
